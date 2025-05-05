@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Table, Container, Row, Col, Card, Pagination } from 'react-bootstrap';
+import config from 'config';
 
 const UserList = () => {
     const [users, setUsers] = useState([]);
@@ -9,7 +10,7 @@ const UserList = () => {
 
     const fetchUsers = async (page = 1) => {
         try {
-            const response = await fetch('http://localhost:8000/api/app/retrieve_name', {
+            const response = await fetch(`${config.API_URL}/retrieve_name`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

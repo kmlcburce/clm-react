@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 import './form.css'; 
-
+import config from 'config';
 const UserForm = ({ onSubmit }) => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -13,7 +13,7 @@ const UserForm = ({ onSubmit }) => {
         const user = { first_name: firstName, last_name: lastName };
 
         try {
-            const response = await fetch('http://localhost:8000/api/app/create_name', {
+            const response = await fetch(`${config.API_URL}/create_name`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

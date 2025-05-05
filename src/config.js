@@ -1,9 +1,9 @@
 let LIVE_BACKEND_URL = null
 let DEV_BACKEND_URL = 'http://localhost:8000/api/app'
-let PRODUCTION_BACKEND_URL = ''
+let PRODUCTION_BACKEND_URL = 'http://35.208.11.48/api/app'
 let SANDBOX_BACKEND_URL = ''
 let BACKEND_URL = null
-switch(0){
+switch(2){
   case 0:
     BACKEND_URL = DEV_BACKEND_URL
     break
@@ -16,7 +16,7 @@ switch(0){
 }
 export default {
   IS_DEV: BACKEND_URL,
-  API_URL: BACKEND_URL + '/',
+  API_URL: BACKEND_URL,
   BACKEND_URL: BACKEND_URL,
   TEST: false,
   HOST: 'http://localhost:8000',
